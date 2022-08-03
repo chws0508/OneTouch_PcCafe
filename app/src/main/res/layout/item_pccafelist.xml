@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.woosuk.onetouch_pccafe.Place" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:strokeColor="@color/gray"
+            app:strokeWidth="0.2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/placeName"
+                    android:text="@{data.place_name}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="제로백PC방" />
+
+                <TextView
+                    android:id="@+id/category"
+                    android:text="@{data.category_name}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@+id/address"
+                    app:layout_constraintStart_toEndOf="@+id/placeName"
+                    tools:text="게임방,PC방" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:text="@{data.road_address_name}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/distance"
+                    app:layout_constraintTop_toBottomOf="@+id/placeName"
+                    tools:text="경기도 수원시 영통구 영통로90번길 12 2층(망포동)" />
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:text="@{data.distance}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/placeName"
+                    tools:text="354m" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+</layout>
